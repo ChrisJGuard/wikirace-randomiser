@@ -22,14 +22,21 @@ function modifierCheck() {
 }
 
 function regularDay(rounds) {
+  // Create a placeholder string for our results
+  results = "Today's race points are as follows:";
+
+  // Generate a random points array
   let points = generatePoints(rounds);
 
-  points.forEach((point, round) => console.log(`Race ${round + 1}: ${point} points`));
+  // Append each points value to the results string
+  points.forEach((point, round) => results += `\nRace ${round + 1}: ${point} points`);
+
+  return results;
 }
 
 function modifiedDay(rounds) {
   // Create a placeholder string for our results
-  let results = "Here are today's races:";
+  let results = "Here are today's modifications:";
 
   // Check to see what is modified
   let isCycleDay = modifierCheck();
