@@ -29,7 +29,7 @@ function regularDay(rounds) {
   let points = generatePoints(rounds);
 
   // Append each points value to the results string
-  points.forEach((point, round) => results += `\nRace ${round + 1}: ${point} points`);
+  points.forEach((point, round) => results += `\nRace ${round + 1}: ${point} point(s)`);
 
   return results;
 }
@@ -89,25 +89,25 @@ function woodyWoodpeckerDay(rounds) {
   roundTypes.forEach((type, round) => {
     switch (type) {
       case 1:
-        results += `\nRound ${round + 1}: Regular Round (${points[round]} points).`
+        results += `\nRound ${round + 1}: Regular Round (${points[round]} point(s)).`
         break;
       case 2:
-        results += `\nRound ${round + 1}: Pursuit Round (${points[round]} points).`
+        results += `\nRound ${round + 1}: Pursuit Round (${points[round]} point(s)).`
         break;
       case 3:
-        results += `\nRound ${round + 1}: Countdown Round (${points[round]} points).`
+        results += `\nRound ${round + 1}: Countdown Round (${points[round]} point(s)).`
         break;
       case 4:
-        results += `\nRound ${round + 1}: TENET Round (${points[round]} points).`
+        results += `\nRound ${round + 1}: TENET Round (${points[round]} point(s)).`
         break;
       case 5:
-        results += `\nRound ${round + 1}: Chaos Round (${points[round]} points).`
+        results += `\nRound ${round + 1}: Chaos Round (${points[round]} point(s)).`
         break;
     }
   })
 
   // Finally, add a slow round and its points to finish the day
-  results += `\nRound ${rounds}: Slow Round (${points[rounds - 1]} points).`
+  results += `\nRound ${rounds}: Slow Round (${points[rounds - 1]} point(s)).`
 
   return results;
 
