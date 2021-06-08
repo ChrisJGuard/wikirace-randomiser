@@ -78,7 +78,7 @@ function woodyWoodpeckerDay(rounds) {
   // Generate an array of round selections
   let roundTypes = [];
 
-  for (i = 0; i < rounds; i++) {
+  for (i = 0; i < rounds - 1; i++) {
     roundTypes.push(randomNumber(1,5));
   }
 
@@ -102,6 +102,9 @@ function woodyWoodpeckerDay(rounds) {
         break;
     }
   })
+
+  // Finally, add a slow round and its points to finish the day
+  results += `\nRound ${rounds}: Slow Round (${points[rounds - 1]} points).`
 
   return results;
 
