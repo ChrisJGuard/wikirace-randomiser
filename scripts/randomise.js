@@ -118,3 +118,21 @@ function addResultsText(results) {
 
   div.innerHTML = results;
 }
+
+function addButtonListeners() {
+  const regular = document.querySelector("#regular")
+  const modified = document.querySelector("#modified")
+  const woodpecker = document.querySelector("#woodpecker")
+
+  regular.addEventListener("mouseup", () => {
+    addResultsText(regularDay(4));
+  })
+
+  modified.addEventListener("mouseup", () => {
+    addResultsText(modifiedDay(4));
+  })
+
+  woodpecker.addEventListener("mouseup", () => {
+    addResultsText(woodyWoodpeckerDay(4));
+  })
+}
