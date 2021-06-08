@@ -20,3 +20,9 @@ function generatePoints(rounds) {
 function modifierCheck() {
   return randomNumber(1,3) === 3 ? true : false;
 }
+
+function regularDay(rounds) {
+  let points = generatePoints(rounds);
+
+  points.forEach((point, round) => console.log(`Race ${round + 1}: ${point} points`));
+}
