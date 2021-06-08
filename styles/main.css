@@ -32,4 +32,6 @@ button {
 
 .results {
   line-height: 1.5;
+  opacity: 0;
+  transition: opacity 2s;
 }

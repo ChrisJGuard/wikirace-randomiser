@@ -116,6 +116,8 @@ function woodyWoodpeckerDay(rounds) {
 function addResultsText(results) {
   const div = document.querySelector(".results");
 
+  div.style.opacity = 1;
+
   div.innerHTML = results;
 }
 
