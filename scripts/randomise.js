@@ -136,3 +136,5 @@ function addButtonListeners() {
     addResultsText(woodyWoodpeckerDay(4));
   })
 }
+
+addButtonListeners();
