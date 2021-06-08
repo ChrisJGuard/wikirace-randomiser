@@ -16,3 +16,7 @@ function generatePoints(rounds) {
   // Return the final array
   return points;
 }
+
+function modifierCheck() {
+  return randomNumber(1,3) === 3 ? true : false;
+}
