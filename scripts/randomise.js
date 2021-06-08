@@ -29,7 +29,7 @@ function regularDay(rounds) {
   let points = generatePoints(rounds);
 
   // Append each points value to the results string
-  points.forEach((point, round) => results += `\nRace ${round + 1}: ${point} point(s)`);
+  points.forEach((point, round) => results += `<br>Race ${round + 1}: ${point} point(s)`);
 
   return results;
 }
@@ -52,18 +52,18 @@ function modifiedDay(rounds) {
     randomNumber(1,2) === 1 ? cycledNames = ["Molly", "Hugh", "Hywel"] : cycledNames = ["Hywel", "Molly", "Hugh"];
 
     // Append to our results string
-    results += `\nToday is a cycle day! Hugh scores points for ${cycledNames[0]}. Hywel scores points for ${cycledNames[1]}. Molly scores points for ${cycledNames[2]}.`;
-  } else results += `\nToday is not a cycle day.`;
+    results += `<br>Today is a cycle day! Hugh scores points for ${cycledNames[0]}. Hywel scores points for ${cycledNames[1]}. Molly scores points for ${cycledNames[2]}.`;
+  } else results += `<br>Today is not a cycle day.`;
 
   // If it's a reverse day...
   if (isReverseDay) {
-    results += `\nToday is a reverse day! I suggest reversing Race ${randomNumber(1,rounds)}.`;
-  } else results += `\nToday is not a cycle day.`;
+    results += `<br>Today is a reverse day! I suggest reversing Race ${randomNumber(1,rounds)}.`;
+  } else results += `<br>Today is not a cycle day.`;
 
   // If it's a chain day...
   if (isChainDay) {
-    results += `\nToday is a chain day! Don't forget to announce after the first race.\n`;
-  } else results += `\nToday is not a chain day.\n`;
+    results += `<br>Today is a chain day! Don't forget to announce after the first race.<br>`;
+  } else results += `<br>Today is not a chain day.<br>`;
 
   // Run the regularDay function to generate points for each round, and append
   results += regularDay(rounds);
@@ -89,25 +89,25 @@ function woodyWoodpeckerDay(rounds) {
   roundTypes.forEach((type, round) => {
     switch (type) {
       case 1:
-        results += `\nRound ${round + 1}: Regular Round (${points[round]} point(s)).`
+        results += `<br>Round ${round + 1}: Regular Round (${points[round]} point(s)).`
         break;
       case 2:
-        results += `\nRound ${round + 1}: Pursuit Round (${points[round]} point(s)).`
+        results += `<br>Round ${round + 1}: Pursuit Round (${points[round]} point(s)).`
         break;
       case 3:
-        results += `\nRound ${round + 1}: Countdown Round (${points[round]} point(s)).`
+        results += `<br>Round ${round + 1}: Countdown Round (${points[round]} point(s)).`
         break;
       case 4:
-        results += `\nRound ${round + 1}: TENET Round (${points[round]} point(s)).`
+        results += `<br>Round ${round + 1}: TENET Round (${points[round]} point(s)).`
         break;
       case 5:
-        results += `\nRound ${round + 1}: Chaos Round (${points[round]} point(s)).`
+        results += `<br>Round ${round + 1}: Chaos Round (${points[round]} point(s)).`
         break;
     }
   })
 
   // Finally, add a slow round and its points to finish the day
-  results += `\nRound ${rounds}: Slow Round (${points[rounds - 1]} point(s)).`
+  results += `<br>Round ${rounds}: Slow Round (${points[rounds - 1]} point(s)).`
 
   return results;
 
