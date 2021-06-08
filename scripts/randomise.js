@@ -62,8 +62,11 @@ function modifiedDay(rounds) {
 
   // If it's a chain day...
   if (isChainDay) {
-    results += `\nToday is a chain day! Don't forget to announce after the first race.`;
-  } else results += `\nToday is not a chain day.`;
+    results += `\nToday is a chain day! Don't forget to announce after the first race.\n`;
+  } else results += `\nToday is not a chain day.\n`;
+
+  // Run the regularDay function to generate points for each round, and append
+  results += regularDay(rounds);
 
   return results;
 }
