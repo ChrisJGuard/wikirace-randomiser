@@ -4,7 +4,7 @@ function randomNumber(lower, upper) {
   return Math.floor(Math.random() * (upper - lower + 1) + lower);
 }
 
-function regularRoundArray(rounds) {
+function generatePoints(rounds) {
   // Create an empty array to store round points values
   let points = [];
 
