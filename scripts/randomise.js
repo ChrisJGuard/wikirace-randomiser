@@ -1,0 +1,1 @@
+// Wikirace Randomiser v1.0
