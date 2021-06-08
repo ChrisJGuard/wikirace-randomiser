@@ -112,3 +112,9 @@ function woodyWoodpeckerDay(rounds) {
   return results;
 
 }
+
+function addResultsText(results) {
+  const div = document.querySelector(".results");
+
+  div.innerHTML = results;
+}
