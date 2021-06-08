@@ -52,18 +52,18 @@ function modifiedDay(rounds) {
     randomNumber(1,2) === 1 ? cycledNames = ["Molly", "Hugh", "Hywel"] : cycledNames = ["Hywel", "Molly", "Hugh"];
 
     // Append to our results string
-    results += `<br><strong>Cycle Day:</strong> YES.<br>Hugh scores points for ${cycledNames[0]}.<br>Hywel scores points for ${cycledNames[1]}.<br>Molly scores points for ${cycledNames[2]}.<br>`;
-  } else results += `<br><strong>Cycle Day:</strong> NO.<br>`;
+    results += `<br><strong>Cycle Day:</strong> YES<br>Hugh scores points for ${cycledNames[0]}<br>Hywel scores points for ${cycledNames[1]}<br>Molly scores points for ${cycledNames[2]}<br>`;
+  } else results += `<br><strong>Cycle Day:</strong> NO<br>`;
 
   // If it's a reverse day...
   if (isReverseDay) {
-    results += `<br><strong>Reverse Day:</strong> YES.<br>[Reverse Race ${randomNumber(1,rounds)}]<br>`;
-  } else results += `<br><strong>Reverse Day:</strong> NO.<br>`;
+    results += `<br><strong>Reverse Day:</strong> YES<br>[Reverse Race ${randomNumber(1,rounds)}]<br>`;
+  } else results += `<br><strong>Reverse Day:</strong> NO<br>`;
 
   // If it's a chain day...
   if (isChainDay) {
-    results += `<br><strong>Chain Day:</strong> YES.<br>[Announce after Race 1]<br><br>`;
-  } else results += `<br><strong>Chain Day:</strong> NO.<br><br>`;
+    results += `<br><strong>Chain Day:</strong> YES<br>[Announce after Race 1]<br><br>`;
+  } else results += `<br><strong>Chain Day:</strong> NO<br><br>`;
 
   // Run the regularDay function to generate points for each round, and append
   results += regularDay(rounds);
