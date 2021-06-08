@@ -23,20 +23,20 @@ function modifierCheck() {
 
 function regularDay(rounds) {
   // Create a placeholder string for our results
-  results = "Today's race points are as follows:";
+  results = "Today's race points are as follows:<br>";
 
   // Generate a random points array
   let points = generatePoints(rounds);
 
   // Append each points value to the results string
-  points.forEach((point, round) => results += `<br>Race ${round + 1}: ${point} point(s)`);
+  points.forEach((point, round) => results += `<br><strong>Race ${round + 1}:</strong> ${point} point(s)`);
 
   return results;
 }
 
 function modifiedDay(rounds) {
   // Create a placeholder string for our results
-  let results = "Here are today's modifications:";
+  let results = "Here are today's modifications:<br>";
 
   // Check to see what is modified
   let isCycleDay = modifierCheck();
@@ -52,18 +52,18 @@ function modifiedDay(rounds) {
     randomNumber(1,2) === 1 ? cycledNames = ["Molly", "Hugh", "Hywel"] : cycledNames = ["Hywel", "Molly", "Hugh"];
 
     // Append to our results string
-    results += `<br>Today is a cycle day! Hugh scores points for ${cycledNames[0]}. Hywel scores points for ${cycledNames[1]}. Molly scores points for ${cycledNames[2]}.`;
-  } else results += `<br>Today is not a cycle day.`;
+    results += `<br><strong>Cycle Day:</strong> YES.<br>Hugh scores points for ${cycledNames[0]}.<br>Hywel scores points for ${cycledNames[1]}.<br>Molly scores points for ${cycledNames[2]}.<br>`;
+  } else results += `<br><strong>Cycle Day:</strong> NO.<br>`;
 
   // If it's a reverse day...
   if (isReverseDay) {
-    results += `<br>Today is a reverse day! I suggest reversing Race ${randomNumber(1,rounds)}.`;
-  } else results += `<br>Today is not a cycle day.`;
+    results += `<br><strong>Reverse Day:</strong> YES.<br>[Reverse Race ${randomNumber(1,rounds)}]<br>`;
+  } else results += `<br><strong>Reverse Day:</strong> NO.<br>`;
 
   // If it's a chain day...
   if (isChainDay) {
-    results += `<br>Today is a chain day! Don't forget to announce after the first race.<br>`;
-  } else results += `<br>Today is not a chain day.<br>`;
+    results += `<br><strong>Chain Day:</strong> YES.<br>[Announce after the first race]<br><br>`;
+  } else results += `<br><strong>Chain Day:</strong> NO.<br><br>`;
 
   // Run the regularDay function to generate points for each round, and append
   results += regularDay(rounds);
@@ -73,7 +73,7 @@ function modifiedDay(rounds) {
 
 function woodyWoodpeckerDay(rounds) {
   // Create a placeholder string for our results
-  let results = "It's Woody Woodpecker Day! Here are today's random rounds and how much they're worth:";
+  let results = "Here are today's random rounds:<br>";
 
   // Generate an array of points
   let points = generatePoints(rounds);
@@ -89,25 +89,25 @@ function woodyWoodpeckerDay(rounds) {
   roundTypes.forEach((type, round) => {
     switch (type) {
       case 1:
-        results += `<br>Round ${round + 1}: Regular Round (${points[round]} point(s)).`
+        results += `<br><strong>Race ${round + 1}:</strong><br> Regular Round<br>${points[round]} point(s)<br>`
         break;
       case 2:
-        results += `<br>Round ${round + 1}: Pursuit Round (${points[round]} point(s)).`
+        results += `<br><strong>Race ${round + 1}:</strong><br> Pursuit Round<br>${points[round]} point(s)<br>`
         break;
       case 3:
-        results += `<br>Round ${round + 1}: Countdown Round (${points[round]} point(s)).`
+        results += `<br><strong>Race ${round + 1}:</strong><br> Countdown Round<br>${points[round]} point(s)<br>`
         break;
       case 4:
-        results += `<br>Round ${round + 1}: TENET Round (${points[round]} point(s)).`
+        results += `<br><strong>Race ${round + 1}:</strong><br> TENET Round<br>${points[round]} point(s)<br>`
         break;
       case 5:
-        results += `<br>Round ${round + 1}: Chaos Round (${points[round]} point(s)).`
+        results += `<br><strong>Race ${round + 1}:</strong><br> Chaos Round<br>${points[round]} point(s)<br>`
         break;
     }
   })
 
   // Finally, add a slow round and its points to finish the day
-  results += `<br>Round ${rounds}: Slow Round (${points[rounds - 1]} point(s)).`
+  results += `<br><strong>Race ${rounds}:</strong><br> Slow Round<br>${points[rounds - 1]} point(s)<br>`
 
   return results;
 
