@@ -57,7 +57,7 @@ function modifiedDay(rounds) {
 
   // If it's a reverse day...
   if (isReverseDay) {
-    results += `<br><strong>Reverse Day:</strong> YES<br>[Reverse Race ${randomNumber(1,rounds)}]<br>`;
+    results += `<br><strong>Reverse Day:</strong> YES<br>[Reverse Race ${randomNumber(1,rounds - 1)}]<br>`;
   } else results += `<br><strong>Reverse Day:</strong> NO<br>`;
 
   // If it's a chain day...
